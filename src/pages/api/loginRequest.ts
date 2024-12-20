@@ -57,6 +57,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     refresh_token: outputData.refresh_token,
                     tickets:[]
                 }
+                console.log("user = ",UserObj);
+                console.log("outputdata = ",outputData);
                 if (outputData){
                     const data = await handleUserLogin(res, UserObj);
                     console.log("data = ",data);
