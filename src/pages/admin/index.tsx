@@ -10,7 +10,8 @@ const LoginDesktop = dynamic(() => import('@/components/pageComponents/admin/log
 
 
 // const LoginURI='https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fadmin%2Flogin&scope=identify+email+guilds.members.read'
-const LoginURI='https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=https%3A%2F%2Fvdljj0vs-3000.inc1.devtunnels.ms%2Fadmin%2Flogin&scope=identify+email+guilds.members.read'
+// const LoginURI='https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=https%3A%2F%2Fvdljj0vs-3000.inc1.devtunnels.ms%2Fadmin%2Flogin&scope=identify+email+guilds.members.read'
+const LoginURI='https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=https%3A%2F%2Fvh-tickets.vercel.app%2Fadmin%2Flogin&scope=identify+email+guilds.members.read+guilds'
 
 const index = () => {
 
@@ -35,7 +36,9 @@ const index = () => {
                     <LoginMobile loginURI={LoginURI}/>
                 </>
                 :<>
-                    <LoginDesktop loginURI={LoginURI}/>
+                    <LoginDesktop loginURI={LoginURI
+
+                    }/>
                 </>
             }
         </>

@@ -9,7 +9,8 @@ const LoginMobile = dynamic(() => import('@/components/pageComponents/login/Logi
 const LoginDesktop = dynamic(() => import('@/components/pageComponents/login/LoginDesktop'), { ssr: false });
 
 // export const loginURI = 'https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fapi%2FloginRequest&scope=identify+email';
-export const loginURI = 'https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=https%3A%2F%2Fvdljj0vs-3000.inc1.devtunnels.ms%2Fapi%2FloginRequest&scope=identify+email';
+// export const loginURI = 'https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=https%3A%2F%2Fvdljj0vs-3000.inc1.devtunnels.ms%2Fapi%2FloginRequest&scope=identify+email';
+export const loginURI = 'https://discord.com/oauth2/authorize?client_id=1311315146932621345&response_type=code&redirect_uri=https%3A%2F%2Fvh-tickets.vercel.app%2Fapi%2FloginRequest&scope=identify+email';
 export default function Home() {
   const isMobile = useMediaQuery({maxWidth: "1000px"})
 
