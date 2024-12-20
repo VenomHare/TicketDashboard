@@ -21,6 +21,7 @@ const dbConnect = async (): Promise<Db> => {
 
     try {
         console.log("before Dbconnect");
+        console.log(client);
         await client.connect();
         console.log("after Dbconnect");
 
