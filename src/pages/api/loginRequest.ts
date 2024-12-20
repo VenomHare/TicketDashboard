@@ -43,8 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 })
                 const userInfo = await user.json();
                 console.log("After Fetch");
-
-
+                
                 // Store the tokens in cookies or database
                 const UserObj =  {
                     uid: generateId(50),
