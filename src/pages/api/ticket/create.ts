@@ -1,7 +1,7 @@
 import { FailTicketCreated, TicketCreated } from "@/logs/ticket";
 import dbConnect from "@/pages/lib/dbConnect";
 import generateId from "@/pages/models/generateId";
-import { Ticket, User } from "@/pages/models/model";
+import { Ticket } from "@/pages/models/model";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Task, UserUpdater } from "../updates";
 import { AdminUpdater } from "../admin/updates";
@@ -17,12 +17,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const adminsDb = await db.collection("admins");
         
         //Ticket ID Logic
-        let currentTicketVarObj = await varaibleDb.findOne({varName: {$eq: "ticketLastId"}});
+        const currentTicketVarObj = await varaibleDb.findOne({varName: {$eq: "ticketLastId"}});
         let currentVar : string = await currentTicketVarObj?.value.toString();
         currentVar = currentVar.padStart(4,"0");
 
         //Get Owner Data
-        let ownerData = await userDb.findOne({uid:{$eq:uid}})
+        const ownerData = await userDb.findOne({uid:{$eq:uid}})
         if (!ownerData)
         {
             console.log("[ERROR]: User Not Found While creating ticket")
@@ -31,7 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         } 
 
         //Create a ticket 
-        let ticketObj : Ticket = {
+        const ticketObj : Ticket = {
             ticketId: currentVar,
             ownerId: ownerData?.userid||"N/A",
             ownerName: ownerData?.username||"N/A",
@@ -72,7 +72,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             FailTicketCreated(ownerData?.username, ownerData?.userid, ownerData?.avatar ,reason , "Failed to update User Ticket data in database","ticket/create.ts:72");
         }
         try {
-            let updateVar = parseInt(currentVar)+1;
+            const updateVar = parseInt(currentVar)+1;
             //Update Ticket Var
             await varaibleDb.updateOne({varName: {$eq: "ticketLastId"}},{$set:{
                 value: updateVar
@@ -85,11 +85,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         }
         TicketCreated(ownerData?.username, ownerData?.userid, ownerData?.avatar ,reason ,currentVar ,"ticket/create.ts:86");
 
-        let userTask : Task = {
+        const userTask : Task = {
             id :"tickets",
             recievers: [ownerData?.userid]
         }
-        let adminTask : Task = {
+        const adminTask : Task = {
             id: "tickets",
             recievers:[]
         }

@@ -1,4 +1,3 @@
-import { RecievedAdminTicketData } from "@/pages/admin/dashboard";
 import dbConnect from "@/pages/lib/dbConnect";
 import { NextApiRequest, NextApiResponse } from "next";
 

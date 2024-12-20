@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import dbConnect from "../lib/dbConnect";
 import getTokenWithRefresh from "../models/getTokenWithRefresh";
-import handleUserLogin from "../models/createUser";
 import { UserLogin } from "@/logs/webhooks";
 import { User } from "../models/model";
 
@@ -19,8 +18,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(503).send("Database Offline")
         }
         const users = db.collection("users");
-        let user = await users.findOne({uid: {$eq: uid}}) as User|null;
-        let time = new Date().toLocaleString();
+        const user = await users.findOne({uid: {$eq: uid}}) as User|null;
+        const time = new Date().toLocaleString();
         if (user) {
             const token_req = await getTokenWithRefresh(user.refresh_token);
             if (!token_req.ok){
@@ -41,7 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     })
                     return;
                 }
-                catch(err){
+                catch{
                     console.log(`📝  Error while Updating tokens of User ${user.username} at ${time}`)
                     res.status(200).json({
                         userFound: false,

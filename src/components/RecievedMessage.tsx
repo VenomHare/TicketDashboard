@@ -184,7 +184,7 @@ const RecievedMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId,
             try {
                 response = await fetch(url, { method: 'HEAD' });
             }
-            catch (err) {
+            catch {
                 return false
             }
 
@@ -197,7 +197,7 @@ const RecievedMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId,
             // Check the Content-Type header
             const contentType = response.headers.get('Content-Type');
             return contentType?.startsWith('image/') ?? false; // Return true if it's an image
-        } catch (error) {
+        } catch {
             return false; // Return false if there's an error
         }
     }
@@ -216,7 +216,7 @@ const RecievedMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId,
             }
 
             return url.href;
-        } catch (error) {
+        } catch {
             return null;
         }
     }
@@ -305,7 +305,7 @@ const RecievedMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId,
                     links.length == 0?<></>
                     :<>
                         {
-                            links.map(previewData=><OpenGraph previewData={previewData} handleLinkClick={handleLinkClick} />)
+                            links.map((previewData, index)=><OpenGraph key={index} previewData={previewData} handleLinkClick={handleLinkClick} />)
                         }
                     </>
                 }

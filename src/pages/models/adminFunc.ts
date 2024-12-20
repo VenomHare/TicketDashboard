@@ -38,14 +38,14 @@ const handleAdminRequest = async (adminObj : Admin) => {
                 AdminCreatedLogs(adminObj, 'handleAdminRequest:37');
                 return {aid:adminObj.aid};
             }
-            catch(err)
+            catch
             {
                 console.log("⚠️ Failed to Insert Admin in DB")
                 return {error: true, errorMessage:"Failed to Insert Admin in DB"}
             }
         }
     }
-    catch(err)
+    catch
     {
         console.log("⚠️ Failed to Fetch Admin");
         return {error: true, errorMessage: "Failed to Fetch Admin"};

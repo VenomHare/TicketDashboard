@@ -9,8 +9,8 @@ const handleUserLogin = async (res: NextApiResponse, user: User)=>{
         res.status(503).send("Database Offline")
     }
     const users = db.collection("users");
-    let userData  = await users.findOne({userid: {$eq: user.userid}});
-    let time = new Date().toLocaleString();
+    const userData  = await users.findOne({userid: {$eq: user.userid}});
+    const time = new Date().toLocaleString();
     if (userData){
         //Update access and Refresh Token
         try{

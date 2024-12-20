@@ -59,20 +59,20 @@ const AdminLoginBtnMobile = styled.button`
         
     `
 
-const AdminHeadingMobile = styled.div`
-        position: absolute;
-        font-family: 'Inter',sans-serif;
-        top: 0px;
-        width: 100svw;
-        height: 8svh;
-        font-size: 4rem;
-        font-weight: 300;
+// const AdminHeadingMobile = styled.div`
+//         position: absolute;
+//         font-family: 'Inter',sans-serif;
+//         top: 0px;
+//         width: 100svw;
+//         height: 8svh;
+//         font-size: 4rem;
+//         font-weight: 300;
         
-        padding-inline: 1svw;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-end;
-    `
+//         padding-inline: 1svw;
+//         display: flex;
+//         justify-content: flex-start;
+//         align-items: flex-end;
+//     `
 interface Props {
     loginURI: string;
 }

@@ -309,11 +309,11 @@ const MessageSubmit = styled.button`
     border: none;
 `
 
-const CenterIcon = styled.span`
-    display: grid;
-    place-items:center;
-    font-size:1.6rem;
-`
+// const CenterIcon = styled.span`
+//     display: grid;
+//     place-items:center;
+//     font-size:1.6rem;
+// `
 const ClosedTicketsTitle = styled.div<{ closed: boolean }>`
     width: 100%;
     height: ${(props) => props.closed ? "10svh" : "100%"};
@@ -583,7 +583,7 @@ interface Props {
 const AdminDashboardMobile: React.FC<Props> = ({
     clientAdmin,
     tickets,
-    setActiveTicket,
+    // setActiveTicket,
     activeTicket,
     ticketsLoading,
     ActiveTicketLoading,
@@ -722,7 +722,7 @@ const AdminDashboardMobile: React.FC<Props> = ({
                                                     </DangerTitleBlock>
 
                                                     <DangerInputBlock>
-                                                        <DangerInputTitle>Type "<DangerTypeInstructText>ticket-{activeTicket?.ticketId}</DangerTypeInstructText>" to close ticket</DangerInputTitle>
+                                                        <DangerInputTitle>Type &quot;<DangerTypeInstructText>ticket-{activeTicket?.ticketId}</DangerTypeInstructText>&quot; to close ticket</DangerInputTitle>
                                                         <DangerInputField required type='text' name='targetValue' autoComplete='off' />
                                                         <DangerActionAuthorParent>
                                                             <div>Closed By</div>

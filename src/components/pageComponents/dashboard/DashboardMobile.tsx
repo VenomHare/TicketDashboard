@@ -11,6 +11,7 @@ import { IoAdd, IoSend } from 'react-icons/io5';
 import { BsFillEmojiSmileFill } from 'react-icons/bs';
 import { RxCross1 } from 'react-icons/rx';
 import Cookies from 'js-cookie'
+import TicketsLoader from '@/components/TicketsLoader';
 
 
 const DashboardParent = styled.div`
@@ -490,6 +491,10 @@ const DashboardMobile: React.FC<Props> = ({
                                 <CreateTicketBtn onClick={() => { setCreateTicketForm(true) }}><CenterIcon><IoAdd /></CenterIcon> Create a Ticket</CreateTicketBtn>
                                 <TicketsContainer>
 
+                                    {
+                                        ticketsLoading ? <><TicketsLoader/></> : <></>
+                                    }
+
                                     <ActiveTicketsTitle>Tickets</ActiveTicketsTitle>
                                     <ActiveTicketsContainer>
                                         {
@@ -545,6 +550,9 @@ const DashboardMobile: React.FC<Props> = ({
                                 <FaArrowLeft />{ }Go Back
                             </BackBtn>
                             <ChatBoxContainer>
+                                {
+                                    ActiveTicketLoading ? <><TicketsLoader/></>:<></>
+                                }
                                 <ChatBoxTitle>{
                                     activeTicket?.isActive ?
                                         <>Ticket-</>

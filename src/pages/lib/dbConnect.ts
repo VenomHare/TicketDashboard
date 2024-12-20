@@ -1,5 +1,4 @@
 import { Db, MongoClient, ServerApiVersion } from "mongodb";
-import mongoose from "mongoose";
 import { AdminSchema, TicketSchema, UserSchema } from "../models/model";
 
 const uri = process.env.CONNECTURI || "";

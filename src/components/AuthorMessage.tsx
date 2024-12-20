@@ -1,6 +1,5 @@
 import { OpenGraphData } from '@/pages/api/og'
 import { Message } from '@/pages/models/model'
-import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MessageImage from './MessageImage'
@@ -150,7 +149,7 @@ interface Props {
 
 const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, setContextedMessageId, deleteMessage, OutClickRef,handleLinkClick , imageView, setImageView}) => {
 
-    const failImageURL = 'https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png'
+    // const failImageURL = 'https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png'
 
     const handleCopy = async () => {
         setContextedMessageId('');
@@ -171,7 +170,7 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
             try{
                 response = await fetch(url, { method: 'HEAD' });
             }
-            catch(err)
+            catch
             {
                 return false
             }
@@ -185,7 +184,7 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
             // Check the Content-Type header
             const contentType = response.headers.get('Content-Type');
             return contentType?.startsWith('image/') ?? false; // Return true if it's an image
-        } catch (error) {
+        } catch {
             return false; // Return false if there's an error
         }
     }
@@ -205,27 +204,15 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
             }
     
             return url.href;
-        } catch (error) {
+        } catch {
             return null;
         }
     }
     
-    useEffect(() => {
-        setLinks([]);
-        setImages([]);
-        const processMessage = async () => {
-            const msg: string[] = [];
-            const retData = await SplitLink(msg); // Await the returned promise
-            setStripMessage(retData); // Join the processed message
-        };
-        setTimeout(()=>{
-            processMessage()
-        }, 500)
-    }, [])
-
-    const SplitLink = async (msg: string[]): Promise<string[]> => {
+    
+    const SplitLink = async (): Promise<string[]> => {
         const urlRegex = /(https?:\/\/(?:www\.)?|www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/gi;
-        let wd : string[] = [];
+        const wd : string[] = [];
         const promises = messageObj.message.split(" ").map(async (word) => {
             if (urlRegex.test(word)) {
                 const uri = getGenericUrl(word) || "";
@@ -249,6 +236,19 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
         await Promise.all(promises); // Wait for all async tasks to finish
         return wd;
     };
+
+    useEffect(() => {
+        setLinks([]);
+        setImages([]);
+        const processMessage = async () => {
+            const retData = await SplitLink(); // Await the returned promise
+            setStripMessage(retData); // Join the processed message
+        };
+        setTimeout(()=>{
+            processMessage()
+        }, 500)
+    }, [])
+
     
     return (
         <AuthorMessageParent key={key} onContextMenu={(e) => {
@@ -266,10 +266,10 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
                 }
 
                 <AuthorMessageBlock contextMenu={contextedMessageId == messageObj.messageId}>
-                    <AuthorMessageContianer> { stripMessage.map(msg=><>
+                    <AuthorMessageContianer> { stripMessage.map((msg, index)=><>
                         {
-                            images.find(i => i == msg) ? <OpenGraphLink href={msg}>{msg}{ }</OpenGraphLink>:
-                            links.find(l => l.word == msg) ? <OpenGraphLink onClick={()=>{handleLinkClick(links.find(l=>l.word==msg)?.link)}}>{msg}{ };</OpenGraphLink> : <>{msg} { }</>
+                            images.find(i => i == msg) ? <OpenGraphLink href={msg} key={index}>{msg}{ }</OpenGraphLink>:
+                            links.find(l => l.word == msg) ? <OpenGraphLink onClick={()=>{handleLinkClick(links.find(l=>l.word==msg)?.link)}} key={index} >{msg}{ };</OpenGraphLink> : <>{msg} { }</>
                         }
                     </>)} 
                     </AuthorMessageContianer>
@@ -285,7 +285,7 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
                     links.length == 0?<></>
                     :<>
                         {
-                            links.map(previewData=><OpenGraph previewData={previewData} handleLinkClick={handleLinkClick} />)
+                            links.map((previewData, index)=><OpenGraph key={index} previewData={previewData} handleLinkClick={handleLinkClick} />)
                         }
                     </>
                 }
@@ -293,8 +293,8 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
                     images?.length == 0 ? <></>
                         : <>
                             {
-                                images?.map((img) => <>
-                                    <MessageImage imageLink={img} messageId={messageObj.messageId} setImageView={setImageView} activeImage={imageView}/>
+                                images?.map((img, index) => <>
+                                    <MessageImage key={index} imageLink={img} messageId={messageObj.messageId} setImageView={setImageView} activeImage={imageView}/>
                                 </>)
                             }
                         </>

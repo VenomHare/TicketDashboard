@@ -27,7 +27,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             }
             res.status(200).json(client);
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed to fetch Admin Data");
             res.status(500).json({error: true, errorMessage: "Failed to fetch Admin Data"})

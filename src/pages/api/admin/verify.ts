@@ -11,8 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(503).send("Database Offline")
         }
         const adminDb = db.collection("admins");
-        let admin = await adminDb.findOne({aid: {$eq: aid}}) as Admin|null;
-        let time = new Date().toLocaleString();
+        const admin = await adminDb.findOne({aid: {$eq: aid}}) as Admin|null;
+        const time = new Date().toLocaleString();
         if (admin) {
             const token_req = await getTokenWithRefresh(admin.refresh_token);
             if (!token_req.ok){

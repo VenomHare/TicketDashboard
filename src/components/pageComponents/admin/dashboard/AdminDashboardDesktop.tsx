@@ -625,7 +625,7 @@ interface Props {
 const AdminDashboardDesktop: React.FC<Props> = ({
     clientAdmin,
     tickets,
-    setActiveTicket,
+    // setActiveTicket,
     activeTicket,
     ticketsLoading,
     ActiveTicketLoading,
@@ -754,7 +754,7 @@ const AdminDashboardDesktop: React.FC<Props> = ({
                                                 </DangerTitleBlock>
 
                                                 <DangerInputBlock>
-                                                    <DangerInputTitle>Type "<DangerTypeInstructText>ticket-{activeTicket?.ticketId}</DangerTypeInstructText>" to close ticket</DangerInputTitle>
+                                                    <DangerInputTitle>Type &qout;<DangerTypeInstructText>ticket-{activeTicket?.ticketId}</DangerTypeInstructText>&qout; to close ticket</DangerInputTitle>
                                                     <DangerInputField required type='text' name='targetValue' autoComplete='off' />
                                                     <DangerActionAuthorParent>
                                                         <div>Closed By</div>

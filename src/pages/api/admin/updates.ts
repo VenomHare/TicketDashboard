@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { Updates } from "../updates";
 
-export let AdminUpdater = new Updates();
+export const AdminUpdater = new Updates();
 
 const handler = async (req: NextApiRequest, res:NextApiResponse) => {
 

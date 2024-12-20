@@ -1,8 +1,7 @@
-import React, { useActionState, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Cookies from 'js-cookie';
 import forwardTo from '@/pages/models/forwardTo';
 import { ClientAdmin, ClientUser, Message, Ticket } from '@/pages/models/model';
-import Loading from '@/components/Loading';
 import dynamic from 'next/dynamic';
 import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';
@@ -17,7 +16,7 @@ export interface RecievedAdminTicketData {
     ownerId: string;
 }
 
-const index = () => {
+const Index : React.FC = () => {
 
     const [clientAdmin, setClientAdmin] = useState<ClientAdmin>()
     const [isLoading, setIsLoading] = useState(true);
@@ -420,4 +419,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Index

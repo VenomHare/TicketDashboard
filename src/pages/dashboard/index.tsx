@@ -1,5 +1,3 @@
-import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next'
-import { ParsedUrlQuery } from 'querystring'
 import React, { useEffect, useRef, useState } from 'react'
 import Cookies from 'js-cookie';
 import { ClientUser, Message, Ticket } from '../models/model';
@@ -13,11 +11,7 @@ import { RecievedAdminTicketData } from '../admin/dashboard';
 const DashboardDesktop = dynamic(() => import('@/components/pageComponents/dashboard/DashboardDesktop'), { ssr: false });
 const DashboardMobile = dynamic(() => import('@/components/pageComponents/dashboard/DashboardMobile'), { ssr: false });
 
-interface Props {
-    query: ParsedUrlQuery;
-}
-
-const index: NextPage<Props> = ({ query }) => {
+const Index: React.FC = () => {
 
     const [clientUser, setClientUser] = useState<ClientUser | undefined>();
     const [isLoading, setIsLoading] = useState(true);
@@ -350,13 +344,6 @@ const index: NextPage<Props> = ({ query }) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
-    const { query } = context;
-    return {
-        props: {
-            query
-        }
-    }
-}
 
-export default index
+
+export default Index

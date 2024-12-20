@@ -31,7 +31,7 @@ export class Updates
         if (!userid) {return []}
         if (Array.isArray(userid)){userid = userid[0]}
 
-        let updates : string[] = []
+        const updates : string[] = []
         this.QueuedUpdates.forEach(task=>{
             if (task.recievers.includes(userid))
             {
@@ -48,7 +48,7 @@ export class Updates
     }
 }
 
-export let UserUpdater = new Updates();
+export const UserUpdater = new Updates();
 
 
 

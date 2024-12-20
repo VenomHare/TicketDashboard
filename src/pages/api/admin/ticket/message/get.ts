@@ -1,5 +1,4 @@
 import dbConnect from "@/pages/lib/dbConnect";
-import { Message } from "@/pages/models/model";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -28,7 +27,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             ticketMessages = ticketMessages?.messages;
             res.status(200).json(ticketMessages);
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed to Fetch Messages");
             res.status(500).json({error:true, errorMessage:"Failed to Fetch Messages"});

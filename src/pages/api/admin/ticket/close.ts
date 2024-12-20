@@ -1,6 +1,5 @@
 import { TicketCLosedLog } from "@/logs/ticket";
 import dbConnect from "@/pages/lib/dbConnect";
-import { error } from "console";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Task, UserUpdater } from "../../updates";
 import { AdminUpdater } from "../updates";
@@ -37,12 +36,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 }
             })
             TicketCLosedLog(ticketId, ticketData?.ownerId, AdminData?.adminid, "admin/ticket/close.ts:37")
-            let userTask : Task = {
+            const userTask : Task = {
                 id: "overall",
                 recievers: [ticketData?.ownerId]
             }
             const adminIds= await admins.find({},{projection: {adminid: 1, _id: 0}}).toArray();
-            let AdminTask : Task = {
+            const AdminTask : Task = {
                 id: "overall",
                 recievers: []
             }
@@ -53,7 +52,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             AdminUpdater.add(AdminTask);
             res.status(200).json({closed: true})
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed To Close Ticket while updating database");
             res.status(500).json({error: true, errorMessage:"Internal Server Error"})

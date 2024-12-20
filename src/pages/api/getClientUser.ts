@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         }
 
         const users = (await dbConnect()).collection("users");
-        let userData = await users.findOne({uid:{$eq:uid}})
+        const userData = await users.findOne({uid:{$eq:uid}})
         if (!userData){
             res.status(200).json({
                 userFound: false

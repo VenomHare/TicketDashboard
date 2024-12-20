@@ -1,5 +1,4 @@
 import dbConnect from "@/pages/lib/dbConnect";
-import { error } from "console";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req:NextApiRequest, res: NextApiResponse) => {

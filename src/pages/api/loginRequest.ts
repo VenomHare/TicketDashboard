@@ -1,8 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { headers } from "next/headers";
-import url, { URLSearchParams } from "url";
-import dbConnect from "../lib/dbConnect";
-import mongoose from "mongoose";
+import { URLSearchParams } from "url";
 import handleUserLogin from "../models/createUser";
 import generateId from "../models/generateId";
 

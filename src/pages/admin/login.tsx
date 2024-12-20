@@ -1,5 +1,4 @@
-import Loading from '@/components/Loading'
-import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { ParsedUrlQuery } from 'querystring'
 import React, { useEffect } from 'react'
 import Cookies from "js-cookie"
@@ -11,7 +10,7 @@ interface Props {
 }
 
 
-const login : NextPage<Props>= ({query}) => {
+const Login : React.FC<Props>= ({query}) => {
 
     useEffect(()=>{
         const aid = Cookies.get("id");
@@ -68,4 +67,4 @@ export const getServerSideProps: GetServerSideProps = async (context:GetServerSi
 }
 
 
-export default login
+export default Login

@@ -1,5 +1,5 @@
 import { ClientUser, Message, Ticket } from '@/pages/models/model'
-import React, { lazy, Suspense, useEffect, useRef, useState } from 'react'
+import React, { lazy, Suspense } from 'react'
 import styled from 'styled-components';
 import { IoAdd } from "react-icons/io5";
 import TicketsLoader from '@/components/TicketsLoader';

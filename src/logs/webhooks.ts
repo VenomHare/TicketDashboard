@@ -185,7 +185,7 @@ export const SendUserCredsUpdate = async (user: User, originFile:string) => {
             timestamp: time
         }]
     })
-    const call = await fetch(UserTokenLogsWebhook, {
+    await fetch(UserTokenLogsWebhook, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: bodyData
@@ -232,7 +232,7 @@ export const UserLogin = async (user: User|null, originFile:string) => {
             timestamp: time
         }]
     })
-    const call = await fetch(LoginLogsWebhook, {
+    await fetch(LoginLogsWebhook, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: bodyData

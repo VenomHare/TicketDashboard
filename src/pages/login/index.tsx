@@ -1,7 +1,6 @@
 // "use client"
-import Loading from '@/components/Loading';
 import Cookies from 'js-cookie';
-import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next'
+import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import React, { useEffect } from 'react'
 import forwardTo from '../models/forwardTo';
@@ -11,9 +10,9 @@ interface Props{
     query: ParsedUrlQuery;
 }
 
-const page : NextPage<Props> = ({query}) => {
+const Page : React.FC<Props> = ({query}) => {
     useEffect(()=>{
-        let cUID = Cookies.get("uid");
+        const cUID = Cookies.get("uid");
 
         if (cUID != undefined){
             forwardTo("/dashboard");
@@ -62,4 +61,4 @@ export const getServerSideProps : GetServerSideProps = async (context: GetServer
         }
     }
 }
-export default page
+export default Page

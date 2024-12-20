@@ -30,25 +30,25 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 res.status(403).json({error: true, errorMessage:"Ticket is not owned by the user"})
             }
 
-            let messageObj : Message = {
+            const messageObj : Message = {
                 messageId: generateId(),
                 message: message,
                 author: ownerData?.username||"N/A",
                 role: "User",
                 time: new Date().toLocaleString("en-IN",{timeZone: 'Asia/Kolkata'}).toString()
             }
-            let messages = ticketData?.messages;
+            const messages = ticketData?.messages;
             messages.push(messageObj);
             
             await ticketsDb.updateOne({ticketId: {$eq:ticketId}},{$set:{messages:messages}})
             MessageAdded(ticketId, ownerData?.userid, "ticket/message/add.ts:42");
             const adminDb = await db.collection("admins");
             const adminIds= await adminDb.find({},{projection: {adminid: 1, _id: 0}}).toArray()
-            let messageTask : Task = {
+            const messageTask : Task = {
                 id: "ticketmsg",
                 recievers: [ownerData?.userid]
             }
-            let AdminMessageTask : Task = {
+            const AdminMessageTask : Task = {
                 id: "ticketmsg",
                 recievers: []
             }
@@ -60,7 +60,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(200).json({messageAdded:true})
 
         }
-        catch(err)
+        catch
         {
             console.log("[ERROR]:: Failed to add message to Ticket| ticket id :"+ticketId);
             //TODO :: Add a Fail Log

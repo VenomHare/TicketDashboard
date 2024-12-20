@@ -27,25 +27,25 @@ const handler = async (req: NextApiRequest, res:NextApiResponse) => {
             const ticketData = await ticketsDb.findOne({ticketId:{$eq:ticketId}})
 
 
-            let messageObj : Message = {
+            const messageObj : Message = {
                 messageId: generateId(),
                 message: message,
                 author: adminData?.adminname||"N/A",
                 role: "Admin",
                 time: new Date().toLocaleString("en-IN",{timeZone: 'Asia/Kolkata'}).toString()
             }
-            let messages = ticketData?.messages;
+            const messages = ticketData?.messages;
             messages.push(messageObj);
             
             await ticketsDb.updateOne({ticketId: {$eq:ticketId}},{$set:{messages:messages}})
             MessageAdded(ticketId,  adminData?.adminid, "admin/ticket/message/add.ts:42");
             const adminDb = await db.collection("admins");
             const adminIds= await adminDb.find({},{projection: {adminid: 1, _id: 0}}).toArray();
-            let messageTask : Task = {
+            const messageTask : Task = {
                 id: "ticketmsg",
                 recievers: [ticketData?.ownerId]
             }
-            let AdminMessageTask : Task = {
+            const AdminMessageTask : Task = {
                 id: "ticketmsg",
                 recievers: []
             }
@@ -56,7 +56,7 @@ const handler = async (req: NextApiRequest, res:NextApiResponse) => {
             AdminUpdater.add(AdminMessageTask);
             res.status(200).json({messageAdded:true})
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed to Insert Admin Message");
             res.status(500).json({error:true,errorMessage:"Failed to Insert Admin Message"})

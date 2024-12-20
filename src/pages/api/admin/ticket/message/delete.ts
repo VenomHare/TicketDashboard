@@ -29,18 +29,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 res.status(404).json({error:true, errorMessage:"Failed to fetch ticket data"})
             }
             let messages:Message[] = ticketData?.messages;
-            let msg = messages.find(m=>m.messageId == messageId);
+            const msg = messages.find(m=>m.messageId == messageId);
             messages = messages.filter(m=>m.messageId !== messageId);
             await ticketDb.updateOne({ticketId:{$eq:ticketId}},{$set:{
                 messages: messages
             }})
             const adminDb = await db.collection("admins");
             const adminIds= await adminDb.find({},{projection: {adminid: 1, _id: 0}}).toArray()
-            let messageTask : Task = {
+            const messageTask : Task = {
                 id: "ticketmsg",
                 recievers: [ticketData?.ownerId]
             }
-            let AdminMessageTask : Task = {
+            const AdminMessageTask : Task = {
                 id: "ticketmsg",
                 recievers: []
             }
@@ -54,7 +54,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             MessageDeleted(ticketId, msg?.author||"N/A", adminData?.adminid, msg?.message||"Message Not Found", "ticket/message/delete.ts:36");
             res.status(200).send({error:false});
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed To Delete Message from Ticket | ticketId :"+ticketId);
             res.status(500).json({error:true, errorMessage:"Failed to Delete Message"});

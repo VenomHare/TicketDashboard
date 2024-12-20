@@ -7,12 +7,12 @@ export default async function handler(req : NextApiRequest, res : NextApiRespons
     if (!url) {
         return res.status(400).json({ error: 'URL is required' });
     }
-    let uri = Array.isArray(url) ? url[0] : url
+    const uri = Array.isArray(url) ? url[0] : url
     try {
         const options : OpenGraphScraperOptions = { url: uri };
         const { result } = await ogs(options);
         res.status(200).json(result);
-    } catch (error) {
+    } catch  {
         res.status(500).json({ error: 'Failed to fetch Open Graph data' });
     }
 }

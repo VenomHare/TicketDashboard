@@ -21,7 +21,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             const ticketData = await ticketDb.findOne({ticketId: {$eq: ticketId}});
             
             let messages:Message[] = ticketData?.messages;
-            let msg = messages.find(m=>m.messageId == messageId);
+            const msg = messages.find(m=>m.messageId == messageId);
             
             const userData = await userDb.findOne({uid: {$eq: uid}});
             const messageOwnerData = await userDb.findOne({username: {$eq: msg?.author}});
@@ -38,11 +38,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             }})
             const adminDb = await db.collection("admins");
             const adminIds= await adminDb.find({},{projection: {adminid: 1, _id: 0}}).toArray()
-            let messageTask : Task = {
+            const messageTask : Task = {
                 id: "ticketmsg",
                 recievers: [userData?.userid]
             }
-            let AdminMessageTask : Task = {
+            const AdminMessageTask : Task = {
                 id: "ticketmsg",
                 recievers: []
             }
@@ -55,7 +55,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
             MessageDeleted(ticketId,msg?.author||"N/A", userData?.userid, msg?.message||"Message Not Found", "ticket/message/delete.ts:36");
             res.status(200).send({error:false});
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed To Delete Message from Ticket | ticketId :"+ticketId);
             res.status(500).json({error:true, errorMessage:"Failed to Delete Message"});

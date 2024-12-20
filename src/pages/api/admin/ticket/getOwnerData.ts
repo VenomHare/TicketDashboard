@@ -1,5 +1,4 @@
 import dbConnect from "@/pages/lib/dbConnect";
-import { error } from "console";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
@@ -41,7 +40,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
                 avatar: userData?.avatar
             })
         }
-        catch(err)
+        catch
         {
             console.log("⚠️ Failed To Get Owner Data");
             res.status(200).json({error: true, errorMessage: "Failed to get Owner Data"});

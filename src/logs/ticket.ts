@@ -1,5 +1,3 @@
-import { User } from "@/pages/models/model";
-
 const CreateLogWebhook =  "https://discord.com/api/webhooks/1314560851650416691/1jGcHIqcyDYY3sLrFqpclD_RMZ48-HibE7BQraWqVmG5ttq5_LOMbKp0cPqPyyy0IFaz"
 const MessageAddedWebhook = "https://discord.com/api/webhooks/1314574538385657856/QYKKXMVV93j7DAe-kqEOgFpMNEvbqAMvkzs2tOPBagkZi0rWgEtP2cqYevv8Jk6vbTbo"
 const MessageDeletedWebhook = "https://discord.com/api/webhooks/1314575874330464296/W9-VtB9SvNr8XAa4rbgGvFFukZLDkPPW38l80hGe-SXiUqq77KwO9iXsWsWPMDRllncj"
