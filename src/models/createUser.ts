@@ -4,6 +4,7 @@ import { User } from "./model";
 import { SendUserCreatedLog, SendUserCreationFailLog, SendUserCredsUpdate, SendUserCredsUpdateFail } from "@/logs/webhooks";
 
 const handleUserLogin = async (res: NextApiResponse, user: User)=>{
+    return undefined;
     const db = await dbConnect();
     console.log("DB = "+db);
     if (!db){

@@ -58,6 +58,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 }
                 console.log("user = ",UserObj);
                 console.log("outputdata = ",outputData);
+                console.log(handleUserLogin);
                 const data = await handleUserLogin(res, UserObj);
                 console.log("data = ",data);
                 if (data?.access_token != undefined)
