@@ -5,6 +5,7 @@ import { SendUserCreatedLog, SendUserCreationFailLog, SendUserCredsUpdate, SendU
 
 const handleUserLogin = async (res: NextApiResponse, user: User)=>{
     const db = await dbConnect();
+    console.log("DB = "+db);
     if (!db){
         res.status(503).send("Database Offline")
     }
