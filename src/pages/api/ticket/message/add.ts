@@ -62,7 +62,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         }
         catch
         {
-            console.log("[ERROR]:: Failed to add message to Ticket| ticket id :"+ticketId);
+            console.log("⚠️:: Failed to add message to Ticket| ticket id :"+ticketId);
             //TODO :: Add a Fail Log
             res.status(500).json({error: true, errorMessage: "Failed to add message to Ticket"})
         }

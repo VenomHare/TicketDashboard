@@ -25,7 +25,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const ownerData = await userDb.findOne({uid:{$eq:uid}})
         if (!ownerData)
         {
-            console.log("[ERROR]: User Not Found While creating ticket")
+            console.log("⚠️: User Not Found While creating ticket")
         
             res.status(404).json({error: true, errorMessage: "User not Found"})
         } 

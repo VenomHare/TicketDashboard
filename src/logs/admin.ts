@@ -54,6 +54,6 @@ export const AdminCreatedLogs = async (user: Admin, originFile: string) => {
     }
     catch(err)
     {
-        console.log("[ERROR]: Sending create user log "+ err)
+        console.log("⚠️: Sending create user log "+ err)
     }
 }

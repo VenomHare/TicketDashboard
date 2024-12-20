@@ -246,7 +246,7 @@ const Index : React.FC = () => {
 
             if (data.error)
             {
-                console.log("[ERROR] "+data.errorMessage);
+                console.log("⚠️ "+data.errorMessage);
                 if (data.clearCookies)
                 {
                     clearCookies();
@@ -297,7 +297,7 @@ const Index : React.FC = () => {
         req.then(d=>d.json().then(data=>{
             if (data.error)
             {
-                console.log("[ERROR] : "+data.errorMessage);
+                console.log("⚠️ : "+data.errorMessage);
                 if (data.clearCookies)
                 {
                     clearCookies();
@@ -314,7 +314,7 @@ const Index : React.FC = () => {
         req.then(d=>d.json().then((data)=>{
             if (data.error)
             {
-                console.log("[ERROR] : "+data.errorMessage);
+                console.log("⚠️ : "+data.errorMessage);
                 if (data.clearCookies)
                 {
                     clearCookies()

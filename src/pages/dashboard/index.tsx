@@ -179,7 +179,7 @@ const Index: React.FC = () => {
                 d.json()
                     .then((data) => {
                         if (data.error) {
-                            console.log("[ERROR] : " + data.errorMessage);
+                            console.log("⚠️ : " + data.errorMessage);
                             forwardTo("/");
                         }
                     })
@@ -209,7 +209,7 @@ const Index: React.FC = () => {
         })
         const ticketMessages = await messagesReq.json();
         if (ticketMessages.error) {
-            console.log("[ERROR] " + ticketMessages.errorMessage);
+            console.log("⚠️ " + ticketMessages.errorMessage);
             // TODO : create a oops! error screen here  
             return;
         }
@@ -228,7 +228,7 @@ const Index: React.FC = () => {
         const res = await addRequest.json();
         if (res.error) {
             //TODO:: add error screen
-            console.log("[ERROR]" + res.errorMessage);
+            console.log("⚠️" + res.errorMessage);
             return;
         }
     }
@@ -251,7 +251,7 @@ const Index: React.FC = () => {
         res
             .then((data) => {
                 if (data.error) {
-                    console.log("[ERROR] " + data.errorMessage);
+                    console.log("⚠️ " + data.errorMessage);
                     setIsLoading(false);
                     return;
                 }

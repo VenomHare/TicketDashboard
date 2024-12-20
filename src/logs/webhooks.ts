@@ -59,7 +59,7 @@ export const SendUserCreatedLog = async (user: User, originFile: string) => {
     }
     catch(err)
     {
-        console.log("[ERROR]: Sending create user log "+ err)
+        console.log("⚠️: Sending create user log "+ err)
     }
 }
 

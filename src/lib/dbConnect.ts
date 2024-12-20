@@ -14,23 +14,13 @@ const client = new MongoClient(uri, {
 let dbInstance: Db | null = null; // Singleton instance of the database
 
 const dbConnect = async (): Promise<Db> => {
-    console.log("reached Dbconnect");
     if (dbInstance) {
         console.log("📝  Already Connected to the database");
         return dbInstance;
     }
 
     try {
-        console.log("before Dbconnect");
-        console.log(uri);
-        try {
-            await client.connect()
-        }
-        catch(err)
-        {
-            console.log("ERROR ",err);
-        }
-        console.log("after Dbconnect");
+        await client.connect()
 
         const db = client.db("TicketDashboard");
 
@@ -58,7 +48,6 @@ const dbConnect = async (): Promise<Db> => {
                 }
             }
         }
-        console.log("before Ping");
 
         // Test the connection with a ping
         await db.command({ ping: 1 });

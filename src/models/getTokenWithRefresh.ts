@@ -7,9 +7,6 @@ export default async function getTokenWithRefresh(refresh_token: string){
         refresh_token,
         grant_type: 'refresh_token'
     })
-    
-    
-    
     try {
         const response = await fetch(apiURL,{
             method: "POST",
@@ -20,6 +17,7 @@ export default async function getTokenWithRefresh(refresh_token: string){
         });
         const data = await response.json();
         console.log("📝  Successfully refreshed user tokens")
+        console.log(data);
         return {ok:true,access_token: data.access_token, refresh_token: data.refresh_token}
     }
     catch(err){

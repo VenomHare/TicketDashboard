@@ -27,7 +27,7 @@ const Login : React.FC<Props>= ({query}) => {
             loginReq.then((d)=>d.json().then(data=>{
                 if (data.error)
                 {
-                    console.log(`[Error] ${data.errorMessage}`);
+                    console.log(`⚠️ ${data.errorMessage}`);
                     setTimeout(()=>{forwardTo("/")},1000)
                 }
                 else{

@@ -5,29 +5,27 @@ import { SendUserCreatedLog, SendUserCreationFailLog, SendUserCredsUpdate, SendU
 
 const handleUserLogin = async (res: NextApiResponse, user: User)=>{
     const db = await dbConnect();
-    console.log("DB = "+db);
     if (!db){
         res.status(503).send("Database Offline")
     }
-    console.log("REACHED ");
     const users = db.collection("users");
     const userData  = await users.findOne({userid: {$eq: user.userid}});
     const time = new Date().toLocaleString();
-    console.log(users, userData, time);
     if (userData){
+
         //Update access and Refresh Token
         try{
-            console.log("Before Update")
+            
             await users.updateOne({id: {$eq: user.userid}},{$set: {
                 access_token: user.access_token,
                 refresh_token: user.refresh_token
             }})
+
             try {
                 SendUserCredsUpdate(user, "createUser.ts:24");
             } catch (err) {
-                console.error("[ERROR] SendUserCredsUpdate failed:", err);
+                console.error("⚠️ SendUserCredsUpdate failed:", err);
             }
-            console.log("Before Update")
 
             console.log(`📝  Updated tokens of User ${user.username} at ${time}`)
             return userData;
