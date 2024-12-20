@@ -21,8 +21,8 @@ const dbConnect = async (): Promise<Db> => {
 
     try {
         console.log("before Dbconnect");
-        const l = await client.connect();
-        console.log(l);
+        console.log(uri);
+        await client.connect();
         console.log("after Dbconnect");
 
         const db = client.db("TicketDashboard");
