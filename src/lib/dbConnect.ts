@@ -7,7 +7,8 @@ const client = new MongoClient(uri, {
         version: ServerApiVersion.v1,
         strict: true,
         deprecationErrors: true,
-    }
+    },
+    connectTimeoutMS: 10000,
 });
 
 let dbInstance: Db | null = null; // Singleton instance of the database
@@ -23,11 +24,7 @@ const dbConnect = async (): Promise<Db> => {
         console.log("before Dbconnect");
         console.log(uri);
         try {
-            await client.connect().then(()=>{
-                console.log("Done with Connection")
-            }).catch(err=>{
-                console.log("ERROR ", err);
-            });
+            await client.connect()
         }
         catch(err)
         {
