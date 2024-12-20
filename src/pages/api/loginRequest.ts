@@ -58,14 +58,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 }
                 console.log("user = ",UserObj);
                 console.log("outputdata = ",outputData);
-                if (outputData){
-                    const data = await handleUserLogin(res, UserObj);
-                    console.log("data = ",data);
-                    if (data)
-                    {
-                        console.log("Redirecting to Login Page")
-                        res.redirect(`/login?uid=${data.uid}`);
-                    }
+                const data = await handleUserLogin(res, UserObj);
+                console.log("data = ",data);
+                if (data)
+                {
+                    console.log("Redirecting to Login Page")
+                    res.redirect(`/login?uid=${data.uid}`);
                 }
                 console.log("Redirecting to home Page")
                 res.redirect("/");
