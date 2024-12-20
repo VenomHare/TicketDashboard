@@ -60,7 +60,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 console.log("outputdata = ",outputData);
                 const data = await handleUserLogin(res, UserObj);
                 console.log("data = ",data);
-                if (data)
+                if (data?.access_token != undefined)
                 {
                     console.log("Redirecting to Login Page")
                     res.redirect(`/login?uid=${data.uid}`);
