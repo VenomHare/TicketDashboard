@@ -59,6 +59,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 }
                 if (outputData){
                     const data = await handleUserLogin(res, UserObj);
+                    console.log("data = ",data);
                     if (data)
                     {
                         console.log("Redirecting to Login Page")
