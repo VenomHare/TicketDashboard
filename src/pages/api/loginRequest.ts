@@ -7,6 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const { code, error } = req.query;
     if (error)
     {
+        console.log("Error");
         res.redirect("/");
     }
 
@@ -14,6 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         if (code) {
             // Discord token endpoint
             const tokenUrl = 'https://discord.com/api/oauth2/token';
+            console.log("Before Fetch");
 
             // Create the form data
             const formData = new URLSearchParams({
@@ -40,6 +42,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     },
                 })
                 const userInfo = await user.json();
+                console.log("After Fetch");
+
 
                 // Store the tokens in cookies or database
                 const UserObj =  {
@@ -53,6 +57,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     refresh_token: outputData.refresh_token,
                     tickets:[]
                 }
+                console.log("After OutputData");
                 if (outputData){
                     const data = await handleUserLogin(res, UserObj);
                     if (data)
