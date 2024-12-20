@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
 import { ParsedUrlQuery } from 'querystring'
 import React, { useEffect } from 'react'
-import forwardTo from '../models/forwardTo';
+import forwardTo from '@/models/forwardTo';
 import TicketsLoader from '@/components/TicketsLoader';
 
 interface Props{

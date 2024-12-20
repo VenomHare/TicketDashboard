@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import forwardTo from '../models/forwardTo'
+import forwardTo from '@/models/forwardTo'
 import Cookies from 'js-cookie'
 import { useMediaQuery } from 'react-responsive'
 import dynamic from 'next/dynamic'

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Cookies from 'js-cookie'
 import { useEffect } from "react";
-import forwardTo from "./models/forwardTo";
+import forwardTo from "@/models/forwardTo";
 import { useMediaQuery } from "react-responsive";
 import dynamic from 'next/dynamic';
 

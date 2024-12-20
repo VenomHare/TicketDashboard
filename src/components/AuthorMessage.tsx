@@ -1,5 +1,5 @@
 import { OpenGraphData } from '@/pages/api/og'
-import { Message } from '@/pages/models/model'
+import { Message } from '@/models/model'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import MessageImage from './MessageImage'

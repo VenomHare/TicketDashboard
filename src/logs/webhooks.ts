@@ -1,4 +1,4 @@
-import { User } from "@/pages/models/model"
+import { User } from "@/models/model"
 const UserCreatedLogsWebhook = "https://discord.com/api/webhooks/1313075528156184627/1yxL5257IpNfyTKpBglSSiW4VGhIVSmRrI8MbdbqbfApIuCLShBb5RvNpsSgW3ooEyhU"
 const UserTokenLogsWebhook = "https://discord.com/api/webhooks/1313086030865502238/e9u3UfOeMiR7kyrhSZ9wEhSUoGB3buOlBWi5RSOLq7nY__VpPR7ep_z2Eg5XEwCv39bI"
 const LoginLogsWebhook = "https://discord.com/api/webhooks/1314566499590996069/qzfVV6H6GLS9av5kg2gmn2WDLFUMwyxwrpsPdp2uAt9I8b_mXMMhuosCcI2glDCwkw98"

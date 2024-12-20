@@ -1,6 +1,6 @@
-import dbConnect from "@/pages/lib/dbConnect";
-import getTokenWithRefresh from "@/pages/models/getTokenWithRefresh";
-import { Admin } from "@/pages/models/model";
+import dbConnect from "@/lib/dbConnect";
+import getTokenWithRefresh from "@/models/getTokenWithRefresh";
+import { Admin } from "@/models/model";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -1,5 +1,5 @@
 import { AdminCreatedLogs } from "@/logs/admin";
-import dbConnect from "../lib/dbConnect"
+import dbConnect from "@/lib/dbConnect"
 import getTokenWithRefresh from "./getTokenWithRefresh";
 import { Admin } from "./model";
 

@@ -1,5 +1,5 @@
 import { NextApiResponse } from "next";
-import dbConnect from "../lib/dbConnect";
+import dbConnect from "@/lib/dbConnect";
 import { User } from "./model";
 import { SendUserCreatedLog, SendUserCreationFailLog, SendUserCredsUpdate, SendUserCredsUpdateFail } from "@/logs/webhooks";
 

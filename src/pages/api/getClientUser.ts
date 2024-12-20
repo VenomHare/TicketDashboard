@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import dbConnect from "../lib/dbConnect";
-import { ClientUser } from "../models/model";
+import dbConnect from "@/lib/dbConnect";
+import { ClientUser } from "@/models/model";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method=="POST"){

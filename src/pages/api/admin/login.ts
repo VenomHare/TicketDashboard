@@ -1,5 +1,5 @@
-import { handleAdminRequest } from "@/pages/models/adminFunc";
-import generateId from "@/pages/models/generateId";
+import { handleAdminRequest } from "@/models/adminFunc";
+import generateId from "@/models/generateId";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const guildId = "1313074417261215784"

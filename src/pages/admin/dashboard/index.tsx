@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Cookies from 'js-cookie';
-import forwardTo from '@/pages/models/forwardTo';
-import { ClientAdmin, ClientUser, Message, Ticket } from '@/pages/models/model';
+import forwardTo from '@/models/forwardTo';
+import { ClientAdmin, ClientUser, Message, Ticket } from '@/models/model';
 import dynamic from 'next/dynamic';
 import { useMediaQuery } from 'react-responsive';
 import Head from 'next/head';

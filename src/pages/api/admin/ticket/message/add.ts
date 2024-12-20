@@ -1,7 +1,7 @@
 import { Task, UserUpdater } from "@/pages/api/updates";
-import dbConnect from "@/pages/lib/dbConnect";
-import generateId from "@/pages/models/generateId";
-import { Message } from "@/pages/models/model";
+import dbConnect from "@/lib/dbConnect";
+import generateId from "@/models/generateId";
+import { Message } from "@/models/model";
 import { NextApiRequest, NextApiResponse } from "next";
 import { AdminUpdater } from "../../updates";
 import { MessageAdded } from "@/logs/ticket";

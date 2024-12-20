@@ -10,9 +10,7 @@ const nextConfig: NextConfig = {
         fs: false,
         net: false,
         tls: false,
-        child_process: false,
         dns: false,
-        timers: false,
       };
     }
     return config;

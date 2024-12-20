@@ -1,5 +1,5 @@
 import { TicketCLosedLog } from "@/logs/ticket";
-import dbConnect from "@/pages/lib/dbConnect";
+import dbConnect from "@/lib/dbConnect";
 import { NextApiRequest, NextApiResponse } from "next";
 import { Task, UserUpdater } from "../../updates";
 import { AdminUpdater } from "../updates";

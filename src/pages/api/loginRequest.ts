@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { URLSearchParams } from "url";
-import handleUserLogin from "../models/createUser";
-import generateId from "../models/generateId";
+import handleUserLogin from "@/models/createUser";
+import generateId from "@/models/generateId";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { code, error } = req.query;

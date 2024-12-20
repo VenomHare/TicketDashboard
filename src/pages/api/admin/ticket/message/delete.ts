@@ -1,7 +1,7 @@
 import { MessageDeleted } from "@/logs/ticket";
 import { Task, UserUpdater } from "@/pages/api/updates";
-import dbConnect from "@/pages/lib/dbConnect";
-import { Message } from "@/pages/models/model";
+import dbConnect from "@/lib/dbConnect";
+import { Message } from "@/models/model";
 import { NextApiRequest, NextApiResponse } from "next";
 import { AdminUpdater } from "../../updates";
 

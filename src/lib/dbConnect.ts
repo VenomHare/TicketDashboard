@@ -1,5 +1,5 @@
 import { Db, MongoClient, ServerApiVersion } from "mongodb";
-import { AdminSchema, TicketSchema, UserSchema } from "../models/model";
+import { AdminSchema, TicketSchema, UserSchema } from "@/models/model";
 
 const uri = process.env.CONNECTURI || "";
 const client = new MongoClient(uri, {

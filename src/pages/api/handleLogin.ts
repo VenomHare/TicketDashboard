@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import dbConnect from "../lib/dbConnect";
-import getTokenWithRefresh from "../models/getTokenWithRefresh";
+import dbConnect from "@/lib/dbConnect";
+import getTokenWithRefresh from "@/models/getTokenWithRefresh";
 import { UserLogin } from "@/logs/webhooks";
-import { User } from "../models/model";
+import { User } from "@/models/model";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method == "POST") {

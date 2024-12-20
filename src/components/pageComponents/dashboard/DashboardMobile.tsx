@@ -1,5 +1,5 @@
 import { RecievedAdminTicketData } from '@/pages/admin/dashboard';
-import { ClientUser, Message, Ticket } from '@/pages/models/model';
+import { ClientUser, Message, Ticket } from '@/models/model';
 import React, { lazy, Suspense, useState } from 'react'
 import styled from 'styled-components'
 import { FaArrowLeft } from "react-icons/fa6";

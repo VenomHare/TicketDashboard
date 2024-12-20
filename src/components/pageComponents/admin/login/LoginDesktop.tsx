@@ -1,4 +1,4 @@
-import forwardTo from '@/pages/models/forwardTo';
+import forwardTo from '@/models/forwardTo';
 import React from 'react'
 import styled from 'styled-components'
 

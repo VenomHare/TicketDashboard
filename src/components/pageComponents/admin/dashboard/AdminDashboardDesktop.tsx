@@ -3,13 +3,13 @@ import OpenLink from '@/components/OpenLink';
 import RecievedMessage from '@/components/RecievedMessage';
 import TicketsLoader from '@/components/TicketsLoader';
 import { RecievedAdminTicketData } from '@/pages/admin/dashboard';
-import { ClientAdmin, ClientUser, Message, Ticket } from '@/pages/models/model'
 import EmojiPicker, { EmojiStyle, Theme } from 'emoji-picker-react';
 import React, { Suspense, useState } from 'react'
 import { BsFillEmojiSmileFill } from 'react-icons/bs';
 import { IoSend } from 'react-icons/io5';
 import styled from 'styled-components';
 import Cookies from 'js-cookie'
+import { ClientAdmin, ClientUser, Message, Ticket } from '@/models/model';
 
 
 const AdminDashboardParent = styled.div`

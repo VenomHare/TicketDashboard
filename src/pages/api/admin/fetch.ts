@@ -1,5 +1,5 @@
-import dbConnect from "@/pages/lib/dbConnect";
-import { Admin, ClientAdmin } from "@/pages/models/model";
+import dbConnect from "@/lib/dbConnect";
+import { Admin, ClientAdmin } from "@/models/model";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

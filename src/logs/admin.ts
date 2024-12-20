@@ -1,4 +1,4 @@
-import { Admin } from "@/pages/models/model";
+import { Admin } from "@/models/model";
 
 const adminCreatedWebhook = "https://discord.com/api/webhooks/1314924774148804650/kb8B_DLdy_yvin34xGOmmOp_3fbcift-rAXR6gOkGdro76icw6z6JQqNWLT-EzW0mWy-"
 
