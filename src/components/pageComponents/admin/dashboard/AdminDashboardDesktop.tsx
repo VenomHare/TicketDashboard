@@ -754,7 +754,7 @@ const AdminDashboardDesktop: React.FC<Props> = ({
                                                 </DangerTitleBlock>
 
                                                 <DangerInputBlock>
-                                                    <DangerInputTitle>Type &qout;<DangerTypeInstructText>ticket-{activeTicket?.ticketId}</DangerTypeInstructText>&qout; to close ticket</DangerInputTitle>
+                                                    <DangerInputTitle>Type &quot;<DangerTypeInstructText>ticket-{activeTicket?.ticketId}</DangerTypeInstructText>&quot; to close ticket</DangerInputTitle>
                                                     <DangerInputField required type='text' name='targetValue' autoComplete='off' />
                                                     <DangerActionAuthorParent>
                                                         <div>Closed By</div>
