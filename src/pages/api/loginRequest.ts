@@ -57,14 +57,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                     refresh_token: outputData.refresh_token,
                     tickets:[]
                 }
-                console.log("After OutputData");
                 if (outputData){
                     const data = await handleUserLogin(res, UserObj);
                     if (data)
                     {
+                        console.log("Redirecting to Login Page")
                         res.redirect(`/login?uid=${data.uid}`);
                     }
                 }
+                console.log("Redirecting to home Page")
                 res.redirect("/");
             }
             catch(err){
