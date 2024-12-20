@@ -22,7 +22,13 @@ const dbConnect = async (): Promise<Db> => {
     try {
         console.log("before Dbconnect");
         console.log(uri);
-        await client.connect();
+        try {
+            await client.connect();
+        }
+        catch(err)
+        {
+            console.log("ERROR ",err);
+        }
         console.log("after Dbconnect");
 
         const db = client.db("TicketDashboard");
