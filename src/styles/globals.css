@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #2F2F2F;
+  --loading-background: #060606ce;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #2F2F2F;
     --foreground: #ededed;
   }
 }
