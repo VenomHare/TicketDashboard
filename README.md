@@ -5,7 +5,7 @@
 This is a basic Ticket System made for Support Team to manage User Complaints, Queries or any service Providable
 
 
-## Packages
+# Packages
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white) ![Static Badge](https://img.shields.io/badge/Next-black?logo=nextdotjs) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB) ![Static Badge](https://img.shields.io/badge/React%20Icons-grey?logo=react&logoColor=orange) ![Static Badge](https://img.shields.io/badge/Styled%20Components-black?logo=styledcomponents&logoColor=pink) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white) ![Static Badge](https://img.shields.io/badge/Discord%200Auth-7289DA?style=flat&logo=discord&logoColor=7289DA&labelColor=v&color=2C2F33&link=https%3A%2F%2Fdiscordapp.com%2Fusers%2F724273091785523271)
 
 
@@ -17,7 +17,11 @@ This is a basic Ticket System made for Support Team to manage User Complaints, Q
 ## 🚀 About Me
 I'm a full stack developer...
 
-![Static Badge](https://img.shields.io/badge/Paypal-black?style=for-the-badge&logo=paypal&link=https%3A%2F%2Fpaypal.me%2Fsarthakk1111) ![Static Badge](https://img.shields.io/badge/Instagram-black?style=for-the-badge&logo=instagram&labelColor=v&link=https%3A%2F%2Finstagram.com%2Fsarthak.1111) ![Static Badge](https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x&labelColor=v&link=https%3A%2F%2Fx.com%2Fsarthak00dev) ![Static Badge](https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin&link=www.linkedin.com%2Fin%2Fsarthak00dev) ![Static Badge](https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=discord&link=https%3A%2F%2Fdiscordapp.com%2Fusers%2F724273091785523271)
+[![Static Badge](https://img.shields.io/badge/Paypal-black?style=for-the-badge&logo=paypal)](https://paypal.me/sarthakk1111)
+[![Static Badge](https://img.shields.io/badge/Instagram-black?style=for-the-badge&logo=instagram)](https://instagram.com/sarthak.1111)
+[![Static Badge](https://img.shields.io/badge/Twitter-black?style=for-the-badge&logo=x)](https://x.com/sarthak00dev)
+[![Static Badge](https://img.shields.io/badge/LinkedIn-black?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sarthak00dev)
+[![Static Badge](https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=discord)](https://discordapp.com/users/724273091785523271)
 
 
 
