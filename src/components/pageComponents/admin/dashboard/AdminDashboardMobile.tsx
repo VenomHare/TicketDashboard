@@ -805,7 +805,7 @@ const AdminDashboardMobile: React.FC<Props> = ({
                                                         msg.author == clientAdmin?.adminname
                                                             ?
                                                             <>
-                                                                <AuthorMessage imageView={imageView} setImageView={setImageView} messageObj={msg} key={index} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />
+                                                                <AuthorMessage active={activeTicket?.isActive || false} imageView={imageView} setImageView={setImageView} messageObj={msg} key={index} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />
                                                             </>
                                                             : <>
                                                                 <RecievedMessage admin imageView={imageView} setImageView={setImageView} messageObj={msg} key={index} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />

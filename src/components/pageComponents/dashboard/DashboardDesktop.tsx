@@ -556,7 +556,7 @@ const DashboardDesktop: React.FC<Props> = ({
                                                                 msg.author == clientUser?.username 
                                                                     ?
                                                                     <>
-                                                                        <AuthorMessage imageView={imageView} setImageView={setImageView} messageObj={msg} key={index} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />
+                                                                        <AuthorMessage active={activeTicket?.isActive || false} imageView={imageView} setImageView={setImageView} messageObj={msg} key={index} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />
                                                                     </>
                                                                     :<>
                                                                         <RecievedMessage imageView={imageView} setImageView={setImageView} messageObj={msg} key={index} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId}/>

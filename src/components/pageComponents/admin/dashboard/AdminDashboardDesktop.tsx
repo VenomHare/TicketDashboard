@@ -815,7 +815,7 @@ const AdminDashboardDesktop: React.FC<Props> = ({
                                                         msg.author == clientAdmin?.adminname
                                                             ?
                                                             <>
-                                                                <AuthorMessage messageObj={msg} key={index} imageView={imageView} setImageView={setImageView} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />
+                                                                <AuthorMessage messageObj={msg} active={activeTicket.isActive} key={index} imageView={imageView} setImageView={setImageView} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />
                                                             </>
                                                             : <>
                                                                 <RecievedMessage admin messageObj={msg} key={index} imageView={imageView} setImageView={setImageView} OutClickRef={OutClickRef} handleLinkClick={handleLinkClick} deleteMessage={handleMessageDelete} contextedMessageId={contextedMessageId} setContextedMessageId={setContextedMessageId} />

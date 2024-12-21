@@ -145,9 +145,10 @@ interface Props {
     handleLinkClick: (link:string) => void;
     imageView: string;
     setImageView: React.Dispatch<React.SetStateAction<string>>;
+    active: boolean;
 }
 
-const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, setContextedMessageId, deleteMessage, OutClickRef,handleLinkClick , imageView, setImageView}) => {
+const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, setContextedMessageId, deleteMessage, active, OutClickRef,handleLinkClick , imageView, setImageView}) => {
 
     // const failImageURL = 'https://icons.veryicon.com/png/o/business/new-vision-2/picture-loading-failed-1.png'
 
@@ -260,7 +261,7 @@ const AuthorMessage: React.FC<Props> = ({ messageObj, key, contextedMessageId, s
                     contextedMessageId == messageObj.messageId ?
                         <AuthorContextMenuParent ref={contextedMessageId == messageObj.messageId ? OutClickRef : null}>
                             <AuthorContextCopyItem onClick={handleCopy}>Copy ID</AuthorContextCopyItem>
-                            <AuthorContextDeleteItem onClick={handleDelete}>Delete</AuthorContextDeleteItem>
+                            { active ? <AuthorContextDeleteItem onClick={handleDelete}>Delete</AuthorContextDeleteItem> : <></>} 
                         </AuthorContextMenuParent>
                         : <></>
                 }
