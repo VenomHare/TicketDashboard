@@ -65,7 +65,7 @@ const Index: React.FC = () => {
                 else {
                     setClientUser(data.userData);
                     UpdateUserTickets(cUID);
-                    updateLoop = setInterval(() => { UpdateLoop(data.userData.userid) }, 5000);
+                    updateLoop = setInterval(() => { UpdateLoop(data.userData.userid) }, 10000);
                 }
             }))
                 .finally(() => {

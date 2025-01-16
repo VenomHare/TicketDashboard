@@ -110,7 +110,7 @@ const Index : React.FC = () => {
                     }
                     setClientAdmin(data);
                     UpdateTickets(data.aid);
-                    updateLoop = setInterval(() => { Updater(data.adminid) }, 5000)
+                    updateLoop = setInterval(() => { Updater(data.adminid) }, 10000)
                 }))
             }))
                 .finally(() => { setIsLoading(false) })
